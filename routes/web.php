@@ -31,10 +31,12 @@ Route::get('/{country}/{province}/{golfName}', 'HomeController@getGoflDetails')-
 Route::get('our-activities', 'HomeController@getActivity')->name('getActivity');
 Route::get('/activity/single/view/{new}', 'HomeController@singActivity')->name('singleActivity');
 Route::post('sent/requestteetime', 'HomeController@getRequestTeeTime')->name('sentTeeTime');
+Route::post('/subscribe', 'SubscribeController@subscribe')->name('subscribe');
 
 Route::get('login', 'UserController@getLogin')->name('getLogin');
 Route::post('doLogin', 'UserController@doLogin')->name('doLogin');
 Route::get('signout', 'UserController@signout')->name('signout');
+
 // ------------End front End ---------------- ||||-----------------
 
 
@@ -84,6 +86,12 @@ Route::group(['middleware'=> 'isAdmin'], function(){
 		Route::get('slide', 'SlideController@getSlide')->name('getSlide');
 		Route::get('slide/new/slide', 'SlideController@getSlideForm')->name('slideForm');
 		Route::post('slide/create/slide', 'SlideController@createSlide')->name('createSlide');
+
+		Route::get('/subscribeemail', 'SubscribeController@getsubcribe')->name('getsubcribe');
+		Route::get('/delatesubscribe', 'SubscribeController@deletesubcribe')->name('deletesubcribe');
+		Route::get('/count_view', 'SubscribeController@getcount')->name('getcount');
+		Route::post('/delet_datal', 'AdminController@delete_data')->name('delete_data_sub');
+		Route::post('/delete_count', 'AdminController@delete__counting')->name('delete__counting');
 	});
 });
 

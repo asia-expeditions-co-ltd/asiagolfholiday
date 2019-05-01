@@ -48,11 +48,26 @@
 			</div>					
 			<div class="col-md-7 col-xs-6">
 				<div><label><h3>Connect With Us</h3></label></div>
+				<div class="col-md-8">
 				<div>
 					<a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
 		            <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
 		            <a href="#"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
 	        	</div>
+					@if (session('message'))
+						<script type="text/javascript"> alert('{{ session("message")}}');</script>
+					@endif
+					
+					<form action="{{route('subscribe')}}" method="post">					              
+					     {{csrf_field() }}
+					  	<div class="input-group ">
+						    <input type="hidden" name="subscribe" value="subscriber">
+						    <span class="input-group-addon" id="sizing-addon1"><i class="fa fa-envelope-o"></i></span>
+						     <input class="form-control " name="email" type="email" placeholder="your email" aria-label="email" required="">
+					        <span class="input-group-btn"><input type="submit" value="Subscribe Now" class="btn btn-primary"></span>
+					    </div>
+					</form>
+				</div>
 			</div>
 		
 			<div class="clearfix"></div>

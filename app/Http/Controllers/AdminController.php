@@ -9,6 +9,8 @@ use App\GolfPackage;
 use App\Province;
 use App\Country;
 use App\SlideShow;
+use App\Subscribe;
+use App\CountView;
 class AdminController extends Controller
 {
     //
@@ -35,6 +37,10 @@ class AdminController extends Controller
             SlideShow::find($req->dataId)->delete();
             return response()->json(['message' => 'Your data has been removed', 'status' => 'yes']);
         }
+          elseif ($req->action == 'datasub') {
+          Subscribe::find($req->dataId)->delete();
+          return response()->json(['message' => 'Your data has been removed', 'status' => 'yes']);
+        }
     }
 
     // option get search data 
@@ -49,5 +55,14 @@ class AdminController extends Controller
             }
             return response()->json(['data' => $data, 'status' => 'yes']);
         }
+    }
+       public function delete__counting(Request $req){
+      if($req->btnStatus == 'Move to Delete'){
+        foreach ($req->checkall as $val) {
+       CountView::find($val)->delete();
+        }
+        $message = 'Your data have been Delete';
+      }
+       return back()->with('message', $message);
     }
 }

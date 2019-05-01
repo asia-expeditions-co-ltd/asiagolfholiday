@@ -12,6 +12,7 @@ use \App\ourNew;
 use Illuminate\Support\Facades\Mail;
 use \App\Mail\RequestTeeTime;
 use \App\Mail\ContactUs;
+use \App\CountView;
 class HomeController extends Controller
 {
     //redirect to the home page of webpage
@@ -42,7 +43,20 @@ class HomeController extends Controller
     }
 
     public function getGoflDetails($country, $province, $golfName){
-        $golf = GolfPackage::where('golf_slug', $golfName)->first();
+           $golf = GolfPackage::where('golf_slug', $golfName)->first();
+
+           $dataip    = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']));
+           $data      = $dataip['geoplugin_request'];
+           $today     = date('Y-m-d 00:00:00');
+        if ( !CountView::Getdate($today, $data , $golf->id)) {
+            $adds                 = new CountView;
+            $adds->ip             = $dataip['geoplugin_request'];
+            $adds->cityName       = $dataip['geoplugin_city'];
+            $adds->countryName    = $dataip['geoplugin_countryName'];
+            $adds->timezone       = $dataip['geoplugin_timezone'];
+            $adds->tour_id        = $golf->id;
+            $adds->save();   
+        }
         return view("destination.singleView", compact('golf'));
     }
 

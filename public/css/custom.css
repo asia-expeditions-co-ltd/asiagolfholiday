@@ -694,4 +694,9 @@ span.sticker {
   color: #555;
 }
 
-
+.collapse >.nav>li>a{
+    text-shadow: 0px 3px 4px #000000 !important;
+    box-shadow: 0px 0px 5px 0px black;}
+.input-group .form-control {
+    z-index: 0 !important;}
+   

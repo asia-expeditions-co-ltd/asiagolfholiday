@@ -73,6 +73,28 @@
               <li><a href="{{route('getUser')}}"><i class="fa fa-circle-o"></i>User List</a></li>
             </ul>
         </li>
+              <li class="@yield('subscribe')  treeview">
+            <a href="javascript:void(0)">
+              <i class="fa fa-bell"></i>
+              <span>Subscribe</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{route('getsubcribe')}}"><i class="fa fa-circle-o"></i>Subscribe List</a></li>
+            </ul>
+        </li>
+        <li class="@yield('countview')  treeview">
+          <a href="javascript:void(0)">
+              <i class="ion ion-eye"></i>
+              <span>Count of Viewer</span>
+              <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+          </a>
+            <ul class="treeview-menu">
+           <li><a href="{{route('getcount')}}"><i class="fa fa-circle-o"></i>Golf tour List</a></li>
+            </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

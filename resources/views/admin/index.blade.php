@@ -60,6 +60,40 @@
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-green">
+              <div class="inner">
+                <h3>
+                {{ $data=\DB::table('tbl_countview')
+                ->select(\DB::Raw('ip'))
+                ->groupBy(\DB::raw('(ip)'))
+                ->get()->count()}}
+                 </h3>
+                <p>Viewer</p>
+              </div>
+            <div class="icon">
+                <i class="ion ion-eye"></i>
+            </div>
+              <a href="{{route('getcount')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-green">
+              <div class="inner">
+                <h3>
+                  {{ $data=\DB::table('tbl_subcribe')
+                  ->select(\DB::Raw('subscribeEmail'))
+                  ->groupBy(\DB::raw('(subscribeEmail)'))
+                  ->get()->count()}}
+                 </h3>
+                <p>Subscriber</p>
+              </div>
+              <div class="icon">
+                  <i class="fa fa-commenting-o"></i>
+              </div>
+              <a href="{{route('getsubcribe')}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
       </div>
       <!-- <div class="row">
         <section class="col-lg-7 connectedSortable">

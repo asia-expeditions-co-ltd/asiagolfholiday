@@ -26,7 +26,9 @@
         <span class="">
             <span class="fa fa-map-pin" style="color: green; font-size: 27px; padding: 13px 12px;"></span> {{{ $golf->country->country_name or ''}}} <i class="fa fa-angle-double-right"></i> {{{ $golf->province->province_name or ''}}} <i class="fa fa-angle-double-right"></i> {{$golf->golf_name}}
         </span>
-        <span class=" pull-right single-price">{{$golf->price}}/Per Player </span>
+        @if(isset($golf->price))
+        <span class=" pull-right single-price">{{isset($golf->price)? $golf->price.'/Per Player': ''}}</span>
+        @endif
     <div class="clearfix"></div>        
     </div>    
 </div>
@@ -58,11 +60,11 @@
                         {{csrf_field()}}
                         <input type="hidden" name="link" value="{{url('/')}}/{{{ $golf->country->country_slug or ''}}}/{{{ $golf->province->slug or ''}}}/{{$golf->golf_slug}}">
                         <div class="col-md-12">
-                            <div class="input-group form-group">
+                            <div class="input-group form-group" style="width: 100%;">
                                 <span class="input-group-btn">
                                     <button class="btn btn-secondary" type="button"><i class="fa fa-calendar"></i></button>
                                 </span>
-                                <input type="date" name="date" class="form-control" placeholder="Date Check Out" required="">                        
+                                <input type="date" name="date" class="form-control" placeholder="Date Check Out" required="">  
                             </div>
                             <div class="form-group">
                                 <div class="row">
