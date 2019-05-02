@@ -36,7 +36,7 @@
 <footer class="footer" style="margin-bottom: 0px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5 col-xs-6">
+			<div class="col-md-5 col-xs-12">
 				<address>
 	                <strong>Head Office: </strong><br>
 	               Asia Golf Holiday<br>Road # 6A, Sangkat Chroy Changvar Chroy Changvar District, 12110 Phnom Penh,, Phnom Penh 12000<br>		                
@@ -46,9 +46,9 @@
 	                <i class="fa fa-envelope-o"></i>&nbsp;  info [at] asiagolfholiday.com <br>	
 	            </address>	            
 			</div>					
-			<div class="col-md-7 col-xs-6">
+			<div class="col-md-7 col-xs-12">
 				<div><label><h3>Connect With Us</h3></label></div>
-				<div class="col-md-8">
+				<div class="col-md-8 col-xs-11">
 				<div>
 					<a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
 		            <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>

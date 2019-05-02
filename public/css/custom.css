@@ -444,7 +444,7 @@ h1, h2, h3, h4, h5, h6,#sub-menu li a, #myNavbar ul.navbar-nav>li>a
     transform: translate3d(0, 0, 0);
 }
 .carousel-fade .carousel-control {
-    z-index: 2;
+    z-index: 0;
 }
 
 

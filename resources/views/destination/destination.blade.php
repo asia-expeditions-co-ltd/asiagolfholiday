@@ -60,7 +60,7 @@ use App\component\Content;
                                     <span class="sticker">{{ $golf->golf_name }}</span>
                                     </div>
                                     <a href="/{{{ $golf->country->country_slug or ''}}}/{{{ $golf->province->slug or ''}}}/{{ $golf->golf_slug}}"> 
-                                        <img src="{{Content::urlImage($golf->picture, '/photos/share/thumbs')}}" style="width: 100%;">
+                                        <img src="{{Content::urlImage($golf->picture, '/photos/share/thumbs/')}}" style="width: 100%;">
                                     </a>
                                     <div class="pro-captions">  
                                         <div class="pull-left">

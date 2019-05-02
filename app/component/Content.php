@@ -24,19 +24,26 @@ class Content
 
 	// }
 
-	public static function urlImage($fileName, $location ){
+	public static $UrlBase = '/home3/asiagolf/public_html/asiagolftravel';
 
-		if ($fileName) {
+	public static $webUrl = '';
+	public static function urlImage($fileName, $location ='/photos/share/thumbs/' ){
 
-			$image = $location.'/'.$fileName;
+		if ( file_exists(public_path().$location.$fileName) ) {
 
-		}else{
+            $image = ($fileName == '' ? '/img/noImage.gif' :static::$webUrl.$location.$fileName);
 
-			$image = '/img/noimage.gif';
+        }else if ( file_exists(static::$UrlBase.$location.$fileName) ) {
 
-		}
+            $image = ($fileName == '' ? '/img/noImage.gif' : static::$webUrl.$location.$fileName);
 
-		return $image;
+        }else{
+
+            $image = ($fileName == '' ? '/img/noImage.gif' : static::$webUrl.$location.$fileName);
+
+        }    
+
+        return $image;
 
 	}
 

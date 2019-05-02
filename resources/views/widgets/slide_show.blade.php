@@ -18,7 +18,7 @@ use App\component\Content;
                   <?php 
                     $active = $key == 0 ? 'active' : '';
                   ?>
-                  <div class="item {{$active}} item-slide" src="{{Content::urlImage($item->picture, '/photos/share')}}" style="background-image: url({{Content::urlImage($item->picture, '/photos/share')}})">
+                  <div class="item {{$active}} item-slide" src="{{url('/')}}{{Content::urlImage($item->picture, '/photos/share/')}}" style="background-image: url('{{url('/')}}{{Content::urlImage($item->picture, '/photos/share/')}}')">
                       <div class="carousel-caption">                      
                         <p>{{$item->name}}</p>
                       </div>

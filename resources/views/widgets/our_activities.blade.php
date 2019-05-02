@@ -12,7 +12,7 @@ $getNews = \App\ourNew::orderBy('id', 'DESC')->get();
 		<div class="carousel-inner">
 			@foreach($getNews as $key => $new)
 			<div class="item {{$key == 0 ? 'active':''}}">
-				<img style="width: 100%;" src="{{Content::urlImage($new->picture, 'photos/share/thumbs')}}" alt="{{$new->tittle}}">
+				<img style="width: 100%;" src="{{Content::urlImage($new->picture, 'photos/share/thumbs/')}}" alt="{{$new->tittle}}">
 				<div class="carousel-caption">
 					<a href="{{route('singleActivity', ['slug' => $new->slug])}}"><h5>{{$new->tittle}}</h5></a>
 				</div>

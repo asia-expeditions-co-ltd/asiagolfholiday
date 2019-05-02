@@ -9,7 +9,7 @@
         <div class="slideshow">
             <div id="myCarousel" class="slide carousel-fade" style="height: 350px;">
                 <div class="carousel-inner" id="carousel-warpper" >
-                    <div  class="item active item-slide" style="background-image: url(http://2f-design.fr/themes/tee-wp/wp-content/uploads/2014/03/3.jpg); background-position: 0px -80px;">                        
+                    <div  class="item active item-slide" style="background-image: url(/photos/share/golf.jpg); background-position: 0px -80px;">                        
                     </div>  
                 </div>    
             </div>
@@ -58,7 +58,7 @@
                         </ul>
                     </div>
                     <div class="img">
-                        <img src="/photos/share/{{$Onew->picture}}" class="img-responsive">
+                        <img src="{{url('/')}}/photos/share/{{$Onew->picture}}" class="img-responsive">
                     </div>
                     <div class="dateTime">
                         <i class="fa fa-calendar"></i> <span>{{date('d-M-Y H:i A', strtotime($Onew->created_at))}}</span>

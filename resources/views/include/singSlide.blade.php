@@ -131,8 +131,8 @@
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:700px;height:446px;overflow:hidden;">
           @if($golf->picture)
             <div data-p="170.00">
-                <img data-u="image" src="{{Content::urlImage($golf->picture, '/photos/share')}}"/>
-                <img data-u="thumb" src="{{Content::urlImage($golf->picture, '/photos/share/thumbs')}}"/>
+                <img data-u="image" src="{{url('/')}}{{Content::urlImage($golf->picture, '/photos/share/')}}"/>
+                <img data-u="thumb" src="{{url('/')}}{{Content::urlImage($golf->picture, '/photos/share/thumbs/')}}"/>
             </div>
           @endif
           <?php 
@@ -141,8 +141,8 @@
           @if(count($gallerys) > 0)
             @foreach($gallerys as $gal)
             <div data-p="170.00">
-                <img data-u="image" src="{{Content::urlImage($gal, '/photos/share')}}" />
-                <img data-u="thumb" src="{{Content::urlImage($gal, '/photos/share/thumbs')}}" />
+                <img data-u="image" src="{{url('/')}}{{Content::urlImage($gal, '/photos/share/')}}" />
+                <img data-u="thumb" src="{{url('/')}}{{Content::urlImage($gal, '/photos/share/thumbs/')}}" />
             </div>
             @endforeach 
           @endif           
