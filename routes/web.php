@@ -17,21 +17,59 @@
 
 
 //--------------------|||||-- front end section -----|||||||----------
+
+
+
+
+Route::get('/','HomeController@index');
+
+Route::get('/500', function () {
+  $home='home';
+  return view('app', compact('home'));
+});
+Route::get('/contact-us', function () {
+  return view('app');
+});
+Route::get('/golf-packages', function () {
+	$GolfPackages='GolfPackages';
+  return view('app', compact('GolfPackages'));
+});
+Route::get('/golf-item/{slug}', function ($slugs) {
+  $slug=$slugs;
+  return view('app', compact('slug'));
+});
+Route::get('/golf-courses-detail/{slug}', function ($slugs) {
+  $slug=$slugs;
+  return view('app', compact('slug'));
+});
+Route::get('/destinations', function () {
+  return view('app');
+});
+Route::get('/golf-courses', function () {
+	$GolfCourses='GolfCourses';
+  return view('app', compact('GolfCourses'));
+});
+Route::get('/destinations/{url}', function ($urlname) {
+	$urlname=$urlname;
+  return view('app', compact('urlname'));
+});
+
+
 // social network
-Route::get('login/facebook', 'SocialController@redirectToProvider');
-Route::get('login/facebook/callback', 'SocialController@handleProviderCallback');
+// Route::get('login/facebook', 'SocialController@redirectToProvider');
+// Route::get('login/facebook/callback', 'SocialController@handleProviderCallback');
 
-Route::get('/', 'HomeController@getHome')->name('home');
-Route::get('/contact-us', 'HomeController@getContactUs')->name('getContact');
-Route::post('/sendcontact', 'HomeController@sendContact')->name('sendContact');
+// Route::get('/', 'HomeController@getHome')->name('home');
+// Route::get('/contact-us', 'HomeController@getContactUs')->name('getContact');
+// Route::post('/sendcontact', 'HomeController@sendContact')->name('sendContact');
 
-Route::get('/golf-courses', 'HomeController@getGolfPackage')->name('destination');
-Route::get('/{country}/golf-courses', 'HomeController@getGolfCourse');
-Route::get('/{country}/{province}/{golfName}', 'HomeController@getGoflDetails')->name('golfDetails');
-Route::get('our-activities', 'HomeController@getActivity')->name('getActivity');
-Route::get('/activity/single/view/{new}', 'HomeController@singActivity')->name('singleActivity');
-Route::post('sent/requestteetime', 'HomeController@getRequestTeeTime')->name('sentTeeTime');
-Route::post('/subscribe', 'SubscribeController@subscribe')->name('subscribe');
+// Route::get('/golf-courses', 'HomeController@getGolfPackage')->name('destination');
+// Route::get('/{country}/golf-courses', 'HomeController@getGolfCourse');
+// Route::get('/{country}/{province}/{golfName}', 'HomeController@getGoflDetails')->name('golfDetails');
+// Route::get('our-activities', 'HomeController@getActivity')->name('getActivity');
+// Route::get('/activity/single/view/{new}', 'HomeController@singActivity')->name('singleActivity');
+// Route::post('sent/requestteetime', 'HomeController@getRequestTeeTime')->name('sentTeeTime');
+// Route::post('/subscribe', 'SubscribeController@subscribe')->name('subscribe');
 
 Route::get('login', 'UserController@getLogin')->name('getLogin');
 Route::post('doLogin', 'UserController@doLogin')->name('doLogin');

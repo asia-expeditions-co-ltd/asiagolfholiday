@@ -6,7 +6,6 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Http\Request;
 class ContactUs extends Mailable
 {
     use Queueable, SerializesModels;
@@ -16,10 +15,12 @@ class ContactUs extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
         //$
         // $this->req = $req;
+        return $this->data = $data;
     }
 
     /**
@@ -27,17 +28,11 @@ class ContactUs extends Mailable
      *
      * @return $this
      */
-    public function build(Request $req)
+    public function build()
     {
         // return $this->markdown('emails.contact.contactus');
-        return $this->from($req->email)
-            ->markdown('emails.contact.contactus')
-            ->with([
-                'username' => $req->username,
-                'email' => $req->email,
-                'phone' => $req->phone,
-                'topic' => $req->topic,
-                'message' => $req->message
-            ]);
+        return $this->from('liheangpo@gmail.com')
+            ->view('emails.contactus.contact')
+            ->with(['data' => $this->data ]);
     }
 }

@@ -1,9 +1,16 @@
 @extends('layout.app')
+@section('title', '')
+
+@section('keywords', 'Asia Golf Holiday, Golf Destinations, Golf Travel, Golf in Cambodia, Golf in Myanmar')
+
+@section('description', 'Asia Golf Holiday destinations to visit and have lot of golf courses')
 <?php 
 use App\component\Content;
 ?>
 @section('content')
 @widget('menu')
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 60px;"></div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs=12" style="height: 60px;"></div>
 @widget('slide_show')
 <div class="container">
 	<div class="col-md-12">

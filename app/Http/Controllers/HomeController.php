@@ -93,8 +93,8 @@ class HomeController extends Controller
 
     // for contact sent message
     public function sendContact(Request $req){
-        $content = ['fullname'=> $req->fullname, 'phone'=> $req->phone, 'email'=> $req->email, 'message'=> $req->message];
-        Mail::to(config('app.email'))->send(new ContactUs($content));
+        $content  = array('fullname'=> $req->fullname, 'phone'=> $req->phone, 'email'=> $req->email, 'message'=> $req->message);
+        Mail::to('lyheng@golftravelmyanmar.com')->send(new ContactUs($content));
         return back()->with('message' , 'Your message has been submitted');
     }
 

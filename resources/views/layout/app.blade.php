@@ -3,8 +3,15 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="/img/Icon-asiagolfholiday.png" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
+    <meta name="description" content="@yield('description')">
+
 	<title>@yield('title') | {{config('app.title')}}</title>
+
+	<link rel="icon" href="/img/Icon-asiagolfholiday.png" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css')}}">

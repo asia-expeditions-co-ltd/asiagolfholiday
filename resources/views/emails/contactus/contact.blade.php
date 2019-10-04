@@ -11,11 +11,9 @@
 				<img src="{{url('')}}/img/demo-logo.png">
 			</center>
 		</div>
-		<div class="container">
-			<h2>Contact Name: {{$data['fullname']}}</h2>
-			<h2>Contact Phone: {{$data['phone']}}</h2>			
+		<div class="container">				
 			<h2>Email Address: {{$data['email']}}</h2>
-			<h2>Message: {{$data['message']}}</h2>
+		
 		</div>
 	</div>
 </body>
